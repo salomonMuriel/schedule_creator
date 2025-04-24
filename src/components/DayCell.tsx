@@ -41,7 +41,7 @@ const DayCell: FC<DayCellProps> = ({
     };
 
     // Extract week number and day name for display
-    const [weekNum, dayName] = dayId.split('-');
+    const [_, dayName] = dayId.split('-');
 
     return (
         <div
