@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useMemo, useEffect, useRef, FC, ChangeEvent, DragEvent, MouseEvent, FormEvent } from 'react';
+import { useState, useCallback, useMemo, useEffect, useRef, FC, ChangeEvent } from 'react';
 import './App.css'; // Assuming you have some base CSS
 
 // Import types

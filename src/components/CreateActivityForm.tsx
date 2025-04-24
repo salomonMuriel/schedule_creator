@@ -1,4 +1,4 @@
-import React, { useState, FC, ChangeEvent, FormEvent } from 'react';
+import { useState, FC, ChangeEvent, FormEvent } from 'react';
 import { Activity, PillarType, CreateActivityFormProps } from '../types'; // Import necessary types
 import { generateId } from '../dataUtils'; // Import ID generator
 

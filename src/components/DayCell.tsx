@@ -1,5 +1,5 @@
-import React, { FC, DragEvent } from 'react';
-import { DayCellProps, Activity } from '../types'; // Import necessary types
+import { FC, DragEvent } from 'react';
+import { DayCellProps } from '../types'; // Import necessary types
 import ActivityTag from './ActivityTag'; // Import the ActivityTag component
 
 // Day Cell Component

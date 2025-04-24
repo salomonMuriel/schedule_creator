@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { WeekRowProps } from '../types'; // Import necessary types
 import DayCell from './DayCell'; // Import the DayCell component
 

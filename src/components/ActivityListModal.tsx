@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { Activity, ActivityListModalProps } from '../types'; // Import necessary types
 
 // Helper to sort activities: Field trips last, then alphabetically by name

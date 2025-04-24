@@ -1,4 +1,4 @@
-import React, { useState, useRef, FC, DragEvent, MouseEvent } from 'react';
+import { useState, useRef, FC, DragEvent, MouseEvent } from 'react';
 import { Activity, ActivityTagProps } from '../types'; // Import necessary types
 
 // Mapping from pillar to Tailwind CSS background color classes

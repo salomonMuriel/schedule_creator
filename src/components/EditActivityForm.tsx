@@ -1,4 +1,4 @@
-import React, { useState, useEffect, FC, ChangeEvent, FormEvent } from 'react';
+import { useState, useEffect, FC, ChangeEvent, FormEvent } from 'react';
 import { PillarType, EditActivityFormProps } from '../types'; // Import necessary types
 
 // Edit Activity Form Component
