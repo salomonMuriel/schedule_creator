@@ -91,8 +91,12 @@ const ActivityTag: FC<ActivityTagProps> = ({
             title={activity.description} // Use standard title for basic hover info
         >
             <div className="flex-grow pr-1">
-                <span className="font-semibold">{activity.name}</span>
-                {activity.isFieldTrip && <span className="ml-1">🚌</span>}
+                {/* Activity Name and Icons */}
+                <div className="flex items-center flex-wrap text-left">
+                    <span className="font-semibold text-left mr-1">{activity.name}</span>
+                    {activity.isFieldTrip && <span className="text-xs ml-1" title="Field Trip">🚌</span>}
+                    {activity.guestSpeaker && <span className="text-xs ml-1" title="Guest Speaker">🎤</span>}
+                </div>
             </div>
 
             {/* Action Buttons - visible on hover */}

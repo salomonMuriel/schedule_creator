@@ -9,6 +9,7 @@ const CreateActivityForm: FC<CreateActivityFormProps> = ({ targetDayId, onAddAct
     const [pillar, setPillar] = useState<PillarType>('Pensar'); // Default pillar
     const [isFieldTrip, setIsFieldTrip] = useState(false);
     const [skills, setSkills] = useState(''); // Store skills as a comma-separated string for input
+    const [guestSpeaker, setGuestSpeaker] = useState(false);
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -23,6 +24,7 @@ const CreateActivityForm: FC<CreateActivityFormProps> = ({ targetDayId, onAddAct
             description: description.trim(),
             pillar,
             isFieldTrip,
+            guestSpeaker,
             // Convert comma-separated string to array, trimming whitespace and removing empty strings
             skills: skills.split(',').map(s => s.trim()).filter(s => s !== ''),
         };
@@ -97,6 +99,18 @@ const CreateActivityForm: FC<CreateActivityFormProps> = ({ targetDayId, onAddAct
                             className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded mr-2"
                         />
                         <span className="text-sm text-gray-700">Is Field Trip? 🚌</span>
+                    </label>
+                </div>
+
+                <div className="mb-6">
+                    <label className="flex items-center">
+                        <input
+                            type="checkbox"
+                            checked={guestSpeaker}
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => setGuestSpeaker(e.target.checked)}
+                            className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded mr-2"
+                        />
+                        <span className="text-sm text-gray-700">Guest Speaker? 🎤</span>
                     </label>
                 </div>
 

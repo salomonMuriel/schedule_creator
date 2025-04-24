@@ -11,6 +11,7 @@ export interface Activity {
   description: string;
   skills?: string[]; // Optional skills array
   isFieldTrip: boolean; // Renamed from fieldTrip for consistency
+  guestSpeaker?: boolean; // Optional: Indicates if a guest speaker is involved
 }
 
 // Interface for the application's internal state representation

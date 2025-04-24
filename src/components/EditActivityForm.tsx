@@ -8,6 +8,7 @@ const EditActivityForm: FC<EditActivityFormProps> = ({ activity, dayId, onUpdate
     const [pillar, setPillar] = useState<PillarType>('Pensar');
     const [isFieldTrip, setIsFieldTrip] = useState(false);
     const [skills, setSkills] = useState(''); // Store skills as a comma-separated string
+    const [guestSpeaker, setGuestSpeaker] = useState(false);
 
     // Populate form with existing activity data when the component mounts or activity changes
     useEffect(() => {
@@ -17,6 +18,7 @@ const EditActivityForm: FC<EditActivityFormProps> = ({ activity, dayId, onUpdate
             setPillar(activity.pillar);
             setIsFieldTrip(activity.isFieldTrip || false);
             setSkills(activity.skills?.join(', ') || ''); // Join array to string
+            setGuestSpeaker(activity.guestSpeaker || false); // Initialize guestSpeaker
         } else {
              // Reset form if activity is somehow null/undefined (safety check)
              setName('');
@@ -24,6 +26,7 @@ const EditActivityForm: FC<EditActivityFormProps> = ({ activity, dayId, onUpdate
              setPillar('Pensar');
              setIsFieldTrip(false);
              setSkills('');
+             setGuestSpeaker(false);
         }
     }, [activity]);
 
@@ -40,8 +43,8 @@ const EditActivityForm: FC<EditActivityFormProps> = ({ activity, dayId, onUpdate
             description: description.trim(),
             pillar,
             isFieldTrip,
-            // Convert comma-separated string back to array
             skills: skills.split(',').map(s => s.trim()).filter(s => s !== ''),
+            guestSpeaker, // Include guestSpeaker in the update
         };
         onUpdateActivity(dayId, updatedActivity);
     };
@@ -115,6 +118,18 @@ const EditActivityForm: FC<EditActivityFormProps> = ({ activity, dayId, onUpdate
                             className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded mr-2"
                         />
                         <span className="text-sm text-gray-700">Is Field Trip? 🚌</span>
+                    </label>
+                </div>
+
+                <div className="mb-6">
+                    <label className="flex items-center">
+                        <input
+                            type="checkbox"
+                            checked={guestSpeaker}
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => setGuestSpeaker(e.target.checked)}
+                            className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded mr-2"
+                        />
+                        <span className="text-sm text-gray-700">Guest Speaker? 🎤</span>
                     </label>
                 </div>
 

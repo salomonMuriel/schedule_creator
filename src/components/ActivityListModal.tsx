@@ -55,7 +55,8 @@ const ActivityListModal: FC<ActivityListModalProps> = ({ scheduleData, onClose }
                                     {groupedActivities[pillar].map(activity => (
                                         <li key={activity.id} className="text-sm p-1.5 bg-white rounded shadow-sm border border-gray-200 overflow-hidden">
                                             <span className="font-medium">{activity.name}</span>
-                                            {activity.isFieldTrip && <span className="ml-1 text-xs" title="Field Trip">🚌</span>}
+                                            {activity.isFieldTrip && <span className="ml-1 text-xs flex-shrink-0" title="Field Trip">🚌</span>}
+                                            {activity.guestSpeaker && <span className="ml-1 text-xs flex-shrink-0" title="Guest Speaker">🎤</span>}
                                             <p className="text-xs text-gray-600 mt-0.5 break-words">{activity.description}</p>
                                             {activity.skills && activity.skills.length > 0 && (
                                                 <div className="mt-1 text-xs flex flex-wrap gap-1">

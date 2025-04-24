@@ -365,6 +365,12 @@ const App: FC = () => {
                         <span className={`${pillarTextColors[pillar]}`}>{pillar}</span>
                     </div>
                 ))}
+                <div className="flex items-center align-center">
+                    <span className="inline-block w-5 h-5 mr-1.5 rounded-sm bg-gray-200 flex items-center justify-center">🚌</span> Field Trip
+                </div>
+                <div className="flex items-center align-center">
+                    <span className="inline-block w-5 h-5 mr-1.5 rounded-sm bg-gray-200 flex items-center justify-center">🎤</span> Guest Speaker
+                </div>
             </div>
 
             {/* --- Schedule Grid --- */}
